@@ -6,6 +6,8 @@ import { MapPin } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import Cart from './../pages/Cart';
 import { IoCartOutline } from "react-icons/io5";
+import { CgClose } from "react-icons/cg";
+
 
 import {
     SignedIn,
@@ -14,9 +16,21 @@ import {
     UserButton
 } from "@clerk/clerk-react";
 
-const Navbar = () => {
+const Navbar = ({location}) => {
 
-    const location = false;
+const [opendrop,setdrop]=useState(false)
+const toggledrop= ()=>{
+    setdrop(!opendrop)
+}
+
+
+const [locationDetected, setLocationDetected] = useState(false)
+const detectLocation = () => {
+    setLocationDetected(true)
+    toggledrop()
+}
+
+
 
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -46,18 +60,40 @@ const Navbar = () => {
                         {/* Location is started */}
 
 
-                        <div className='hidden lg:flex items-center gap-1 text-gray-700 text-sm cursor-pointer font-medium'>
+                        <div className=' flex items-center relative gap-1 text-gray-700 text-sm cursor-pointer font-medium'>
 
                             <MapPin className='text-green-400 w-4 h-4' />
 
                             <span>
-                                {location ? <div></div> : "Add Address"}
+                                {locationDetected && location ? <div className='-space-y-1'>
+                                  <p>{location.suburb}</p>
+                                  <p>{location.city}</p>
+                              </div> : "Add Address"}
                             </span>
 
-                            <FaCaretDown className='text-green-600 text-xs mt-[1px]' />
+                            <FaCaretDown onClick={toggledrop} className='text-green-600 text-lg md-[1px]' />
+
+
+{
+    opendrop ? <div className='rounded-xl absolute z-50 top-12 w-[180px] border border-gray-100 bg-white shadow-lg'>
+        <div className='px-4 py-3 flex items-center justify-between'>
+            <h1 className='font-semibold text-gray-800'>Location</h1>
+            <span onClick={toggledrop} className='text-gray-400 hover:text-red-400 cursor-pointer text-xl transition-all'><CgClose /></span>
+        </div>
+        <div className='px-4 pb-4'>
+            <button onClick={detectLocation} className='w-full bg-green-500 py-2 rounded-lg text-white font-semibold hover:bg-green-600 transition-all cursor-pointer'>
+                Detect Location
+            </button>
+        </div>
+    </div> : null
+}
 
                         </div>
 
+                        
+
+
+                     
 
                         {/* location is end             */}
 
@@ -237,9 +273,7 @@ const Navbar = () => {
                             to={'/contact'}
                             onClick={() => setOpenMenu(false)}
                             className={({ isActive }) =>
-                                `${isActive ? "text-green-500" : "text-gray-700"}`
-                            }
-                        >
+                                `${isActive ? "text-green-500" : "text-gray-700"}`}>
                             <li>Contact</li>
                         </NavLink>
 
