@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 import  { useEffect, useState } from 'react'
 import axios from './../node_modules/axios/lib/axios';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -17,14 +18,14 @@ const App = () => {
   const getLocation = async()=>{
     navigator.geolocation.getCurrentPosition(async pos =>{
       const{latitude, longitude}= pos.coords
-      console.log(latitude,longitude);
+      // console.log(latitude,longitude);
 
 
      const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
 
      try {
       const location = await axios.get(url)
-      console.log(location)
+      // console.log(location)
       const exactLocation = location.data.address
       setLocation(exactLocation)
       
@@ -42,7 +43,7 @@ const App = () => {
  },[])
 
   return (
-   <BrowserRouter>
+   <BrowserRouter basename='/NexCart'>
    <Navbar location={location} />
      <Routes>
       <Route path='/' element={<Home />} ></Route>
@@ -51,6 +52,7 @@ const App = () => {
       <Route path='/contact' element={<Contact />} ></Route>
       <Route path='/cart' element={<Cart />} ></Route>
      </Routes>
+     <Footer />
    </BrowserRouter>
   )
 }

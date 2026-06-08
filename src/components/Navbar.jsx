@@ -44,11 +44,11 @@ const detectLocation = () => {
 
                     {/* LOGO Of SITE */}
 
-                    <div className='flex items-center gap-5'>
+                    <div className='flex items-center gap-2 md:gap-6'>
 
                         <Link to={'/'}>
 
-                            <h1 className='font-bold text-2xl md:text-3xl leading-none'>
+                            <h1 className='font-bold text-sm md:text-3xl leading-none'>
                                 <span className='text-green-400 font-serif'>Nex</span>
                                 <span>Cart</span>
                             </h1>
@@ -60,7 +60,7 @@ const detectLocation = () => {
                         {/* Location is started */}
 
 
-                        <div className=' flex items-center relative gap-1 text-gray-700 text-sm cursor-pointer font-medium'>
+                        <div className=' flex items-center relative gap-1 text-gray-700 text-[10px] md:text-sm cursor-pointer font-medium'>
 
                             <MapPin className='text-green-400 w-4 h-4' />
 
