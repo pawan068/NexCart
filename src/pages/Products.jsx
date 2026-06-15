@@ -3,7 +3,8 @@ import { getData } from './../Context/Datacontext'
 import Loading from "../assets/Loading.webm"
 import FilterSection from './../components/FilterSection'
 import ProductCart from './../components/ProductCart'
-import {convertToINR  } from "../utils/Currency";
+import { convertToINR } from "../utils/Currency"
+import { SlidersHorizontal, X } from "lucide-react"
 
 const Products = () => {
 
@@ -19,6 +20,8 @@ const Products = () => {
     fetchProducts()
   }, [])
 
+
+  const [showFilters, setShowFilters]=useState(false)
 
   const [filteredProducts, setFilteredProducts] = useState([])
 
