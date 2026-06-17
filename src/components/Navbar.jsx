@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import Cart from './../pages/Cart';
 import { IoCartOutline } from "react-icons/io5";
 import { CgClose } from "react-icons/cg";
+import { getCart } from "../Context/CartContext";
 
 
 import {
@@ -18,10 +19,16 @@ import {
 
 const Navbar = ({location}) => {
 
+    const {totalItems}= getCart()
+
+    
+
 const [opendrop,setdrop]=useState(false)
 const toggledrop= ()=>{
     setdrop(!opendrop)
 }
+
+
 
 
 const [locationDetected, setLocationDetected] = useState(false)
@@ -180,7 +187,7 @@ const detectLocation = () => {
                             </div>
 
                             <span className='bg-green-500 text-white h-5 w-5 flex items-center justify-center rounded-full absolute font-bold -top-1 -right-1 text-xs border-2 border-white'>
-                                0
+                                {totalItems}
                             </span>
 
                         </Link>

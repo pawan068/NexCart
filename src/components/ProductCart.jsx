@@ -1,13 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoCartOutline } from 'react-icons/io5'
 import { convertToINR } from "../utils/currency";
+import { useNavigate } from "react-router-dom";
+import { getCart } from "../Context/CartContext";
 
 const ProductCart = ({ product }) => {
+
+  const [added, setAdded] = useState(false)
+
+  const navigate = useNavigate()
+  const { addToCart } = getCart();
 
   return (
     <div className="bg-white border border-gray-200 max-h-[450px] md:max-h-[350px] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
 
-      <div className="bg-gray-50 p-4 flex items-center justify-center h-[200px] sm:h-40">
+      <div onClick={() => navigate(`/product/${product.id}`)} className="bg-gray-50 p-4 flex items-center justify-center h-[200px] sm:h-40">
         <img
           src={product.image}
           alt={product.title}
@@ -48,9 +55,12 @@ const ProductCart = ({ product }) => {
 
         </div>
 
-        <button className="w-full h-8 mt-4 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-xl transition-all duration-300 cursor-pointer">
+        <button onClick={() => {
+          addToCart(product)
+          setAdded(true)
+        }} className="w-full h-8 mt-4 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-xl transition-all duration-300 cursor-pointer">
           <IoCartOutline size={20} />
-          Add to Cart
+          {added?"Added To Cart":"Add To Cart"}
         </button>
 
       </div>
