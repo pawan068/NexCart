@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
+import { ThemeProvider } from "./Context/ThemeContext";
 import { ClerkProvider } from '@clerk/clerk-react'
 import { DataProvider } from "./Context/Datacontext.jsx";
 import{CartProvider} from './Context/CartContext.jsx'
@@ -11,6 +12,7 @@ import { DataContext } from './Context/Datacontext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+<ThemeProvider>
     <DataProvider>
       <CartProvider>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
@@ -18,5 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </ClerkProvider>
     </CartProvider>
     </DataProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 )

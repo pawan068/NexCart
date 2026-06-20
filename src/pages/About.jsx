@@ -1,17 +1,18 @@
 import React from "react";
 import { ShoppingBag, Truck, ShieldCheck, Headphones } from "lucide-react";
+import { getTheme } from "../Context/ThemeContext";
 
 const About = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
+    <section className="max-w-7xl dark:bg-[#161b27] mx-auto px-4 py-12">
 
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+        <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-800">
           About <span className="text-emerald-600">NexCart</span>
         </h1>
 
-        <p className="mt-5 text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-5 text-gray-600 dark:text-white max-w-3xl mx-auto leading-relaxed">
           NexCart is a modern e-commerce platform built to provide a fast,
           secure, and seamless shopping experience. Our goal is to make
           online shopping simple, affordable, and accessible for everyone.
@@ -22,17 +23,17 @@ const About = () => {
       <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
 
         <div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl font-bold dark:text-green-500 text-gray-800 mb-4">
             Our Story
           </h2>
 
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-gray-600 text-white leading-relaxed mb-4">
             NexCart was created with a vision to simplify online shopping.
             We believe customers deserve a platform that is easy to use,
             transparent, and packed with quality products.
           </p>
 
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-white leading-relaxed">
             From electronics and fashion to daily essentials, we strive
             to bring everything you need into one convenient place.
           </p>
@@ -57,48 +58,48 @@ const About = () => {
       {/* Features Section */}
       <div className="mb-20">
 
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+        <h2 className="text-3xl font-bold text-center dark:text-[#e2e8f0] text-gray-800 mb-10">
           What We Offer
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          <div className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
+          <div className="bg-white dark:bg-[#2a3347] border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
             <ShoppingBag className="text-emerald-600 mb-4" size={40} />
-            <h3 className="font-semibold text-lg mb-2">
+            <h3 className="font-semibold text-lg mb-2 dark:text-white">
               Wide Collection
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm dark:text-[#e2e8f0]">
               Explore products from multiple categories all in one place.
             </p>
           </div>
 
-          <div className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
+          <div className="bg-white dark:bg-[#2a3347] border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
             <Truck className="text-emerald-600 mb-4" size={40} />
-            <h3 className="font-semibold text-lg mb-2">
+            <h3 className="font-semibold text-lg mb-2 dark:text-white">
               Fast Delivery
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm dark:text-[#e2e8f0]">
               Quick and reliable shipping to your doorstep.
             </p>
           </div>
 
-          <div className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
+          <div className="bg-white dark:bg-[#2a3347] border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
             <ShieldCheck className="text-emerald-600 mb-4" size={40} />
-            <h3 className="font-semibold text-lg mb-2">
+            <h3 className="font-semibold text-lg mb-2 dark:text-white">
               Secure Payments
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm dark:text-[#e2e8f0]">
               Safe transactions protected with modern security.
             </p>
           </div>
 
-          <div className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
+          <div className="bg-white dark:bg-[#2a3347] border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
             <Headphones className="text-emerald-600 mb-4" size={40} />
-            <h3 className="font-semibold text-lg mb-2">
+            <h3 className="font-semibold text-lg mb-2 dark:text-white">
               24/7 Support
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm dark:text-[#e2e8f0]">
               Dedicated support whenever you need assistance.
             </p>
           </div>

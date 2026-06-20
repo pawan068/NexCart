@@ -10,6 +10,7 @@ import  { useEffect, useState } from 'react'
 import axios from './../node_modules/axios/lib/axios';
 import Footer from './components/Footer';
 import SingleProduct from './pages/SingleProduct';
+import Support from './pages/Support';
 
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
       <Route path='/product/:id' element={< SingleProduct />} ></Route>
       <Route path='/about' element={<About />} ></Route>
       <Route path='/contact' element={<Contact />} ></Route>
+      <Route path='/Support' element={<Support />} ></Route>
       <Route path='/cart' element={<Cart />} ></Route>
      </Routes>
      <Footer />

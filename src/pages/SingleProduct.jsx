@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getData } from "../Context/Datacontext";
 import { convertToINR } from "../utils/Currency";
-
+import { getTheme } from "../Context/ThemeContext";
 import { getCart } from './../Context/CartContext';
+import{useNavigate} from 'react-router-dom'
 
 import{
   Star,
@@ -19,6 +20,8 @@ import{
 
 
 const SingleProduct = () => {
+
+  const navigate= useNavigate()
 
   const [added , setAdded]= useState(false)
 
@@ -55,15 +58,15 @@ const SingleProduct = () => {
   const {addToCart}= getCart();
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-10">
+    <section className="max-w-7xl dark:bg-[#0f1117] mx-auto px-4 py-10">
 
-      <div className="bg-white border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
+      <div className="bg-white border dark:bg-[#1e2535] border-gray-200 rounded-3xl shadow-lg overflow-hidden">
 
         <div className="grid lg:grid-cols-2 gap-10 p-6 md:p-10">
 
           {/* IMAGE SECTION */}
 
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 flex items-center justify-center">
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100  dark:bg-gradient-to-br dark:from-gray-300 via-gray-400 dark:to-gray-500 rounded-3xl p-8 flex items-center justify-center">
 
             <img
               src={product.image}
@@ -77,11 +80,11 @@ const SingleProduct = () => {
 
           <div>
 
-            <span className="inline-block bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-sm capitalize font-medium">
+            <span className="inline-block bg-emerald-100  text-emerald-700 px-4 py-1 rounded-full text-sm capitalize font-medium">
               {product.category}
             </span>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-bold dark:text-white text-gray-800 mt-4 leading-tight">
               {product.title}
             </h1>
 
@@ -142,7 +145,7 @@ const SingleProduct = () => {
                 Product Description
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-white leading-relaxed">
                 {product.description}
               </p>
 
@@ -152,7 +155,7 @@ const SingleProduct = () => {
 
             <div className="mt-8">
 
-              <h3 className="font-semibold text-gray-800 mb-3">
+              <h3 className="font-semibold dark:text-white text-gray-800 mb-3">
                 Quantity
               </h3>
 
@@ -163,12 +166,12 @@ const SingleProduct = () => {
                     quantity > 1 &&
                     setQuantity(quantity - 1)
                   }
-                  className="w-10 h-10 rounded-lg border flex items-center justify-center hover:bg-gray-100"
+                  className="w-10 h-10 rounded-lg cursor-pointer border flex items-center justify-center dark:text-white dark:border-white dark:hover:bg-transparent hover:bg-gray-100"
                 >
                   <Minus size={18} />
                 </button>
 
-                <span className="font-bold text-xl w-8 text-center">
+                <span className="font-bold dark:text-white text-xl w-8 text-center">
                   {quantity}
                 </span>
 
@@ -176,7 +179,7 @@ const SingleProduct = () => {
                   onClick={() =>
                     setQuantity(quantity + 1)
                   }
-                  className="w-10 h-10 rounded-lg border flex items-center justify-center hover:bg-gray-100"
+                  className="w-10 h-10 rounded-lg border cursor-pointer flex items-center justify-center dark:text-white dark:border-white dark:hover:bg-transparent hover:bg-gray-100"
                 >
                   <Plus size={18} />
                 </button>
@@ -191,18 +194,21 @@ const SingleProduct = () => {
 
               <button onClick={()=>{
               addToCart(product)
-                setAdded(true)}
-              } className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-semibold transition-all">
+                setAdded(true)
+              window.scrollTo(0,0)}
+              } className="flex items-center justify-center gap-2 bg-emerald-60 cursor-pointer0 border hover:bg-emerald-700 text-white py-4 rounded-xl font-semibold transition-all">
 
                 <ShoppingCart size={20} />
                 {added?"Added To Cart":"Add To Cart"}
 
               </button>
 
-              <button className="flex items-center justify-center gap-2 border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 py-4 rounded-xl font-semibold transition-all">
+              <button  onClick={() =>{ navigate("/contact")
+                window.scrollTo(0,0)}
+              }  className="flex items-center justify-center cursor-pointer gap-2 border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 py-4 rounded-xl font-semibold transition-all">
 
                 <Zap size={20} />
-                Buy Now
+                Contact us
 
               </button>
 
@@ -218,52 +224,52 @@ const SingleProduct = () => {
 
       <div className="grid md:grid-cols-3 gap-5 mt-10">
 
-        <div className="bg-white border rounded-2xl p-6 text-center shadow-sm">
+        <div className="bg-white dark:bg-[#161b27] dark:text-white border rounded-2xl p-6 text-center shadow-sm">
 
           <Truck
             size={35}
-            className="mx-auto text-emerald-600"
+            className="mx-auto  text-emerald-600"
           />
 
-          <h3 className="font-semibold mt-3 text-gray-800">
+          <h3 className="font-semibold dark:text-white mt-3 text-gray-800">
             Free Delivery
           </h3>
 
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm dark:text-white text-gray-500 mt-2">
             Fast and secure delivery
           </p>
 
         </div>
 
-        <div className="bg-white border rounded-2xl p-6 text-center shadow-sm">
+        <div className="bg-white dark:bg-[#161b27] dark:text-white border rounded-2xl p-6 text-center shadow-sm">
 
           <RotateCcw
             size={35}
-            className="mx-auto text-emerald-600"
+            className="mx-auto  text-emerald-600"
           />
 
-          <h3 className="font-semibold mt-3 text-gray-800">
+          <h3 className="font-semibold dark:text-white mt-3 text-gray-800">
             Easy Returns
           </h3>
 
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm dark:text-white text-gray-500 mt-2">
             Hassle-free return policy
           </p>
 
         </div>
 
-        <div className="bg-white border rounded-2xl p-6 text-center shadow-sm">
+        <div className="bg-white dark:bg-[#161b27] dark:text-white border rounded-2xl p-6 text-center shadow-sm">
 
           <ShieldCheck
             size={35}
-            className="mx-auto text-emerald-600"
+            className="mx-auto  text-emerald-600"
           />
 
-          <h3 className="font-semibold mt-3 text-gray-800">
+          <h3 className="font-semibold dark:text-white mt-3 text-gray-800">
             Secure Payment
           </h3>
 
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm dark:text-white text-gray-500 mt-2">
             100% protected checkout
           </p>
 

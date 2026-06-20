@@ -1,6 +1,7 @@
 import React from "react";
 import { getCart } from "../Context/CartContext";
 import { convertToINR } from "../utils/currency";
+import { getTheme } from "../Context/ThemeContext";
 import {
 Plus,
 Minus,
@@ -25,7 +26,7 @@ const total = cartItems.reduce(
 );
 
 const totalItems = cartItems.length
-return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
+return ( <section className="min-fit-screen dark:bg-[#161b27] bg-gray-50 pb-28 lg:pb-10">
 
 
   {/* HEADER */}
@@ -34,11 +35,11 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
     <div className="mb-8">
 
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
         Shopping Cart
       </h1>
 
-      <p className="text-gray-500 mt-2">
+      <p className="text-gray-500 mt-2 dark:tect-white">
         {totalItems} Items Added To Cart
       </p>
 
@@ -48,7 +49,7 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
     {cartItems.length === 0 ? (
 
-      <div className="bg-white rounded-3xl shadow-md p-10 text-center">
+      <div className="bg-white dark:bg-[#161b27] rounded-3xl shadow-md p-10 text-center">
 
         <ShoppingBag
           size={60}
@@ -77,14 +78,14 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
             <div
               key={item.id}
-              className="bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="bg-white dark:bg-[#131b2f87] dark:shadow-gray-800 dark:shadow-sm dark:hover:shadow-md dark:border-[#1a2338] rounded-3xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
 
               <div className="flex gap-4 p-4">
 
                 {/* IMAGE */}
 
-                <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-gradient-to-br from-emerald-50 to-gray-100 flex items-center justify-center flex-shrink-0">
+                <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl  bg-emerald-50 dark:bg-[#1e2535]  flex items-center justify-center flex-shrink-0">
 
                   <img
                     src={item.image}
@@ -100,7 +101,7 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
                   <div>
 
-                    <h2 className="font-semibold text-gray-800 text-sm md:text-lg line-clamp-2">
+                    <h2 className="font-semibold text-gray-800 dark:text-white text-sm md:text-lg line-clamp-2">
                       {item.title}
                     </h2>
 
@@ -133,22 +134,22 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
                   <div className="flex items-center justify-between mt-4">
 
-                    <div className="flex items-center bg-gray-100 rounded-full">
+                    <div className="flex items-center dark:bg-[#1e2535] dark:shadow-gray-400 dark:shadow-2xl bg-gray-100 rounded-full">
 
                       <button
                         onClick={() => decreaseQty(item.id)}
-                        className="w-9 h-9 flex items-center justify-center hover:bg-gray-200 rounded-full transition"
+                        className="w-9 h-9 flex items-center cursor-pointer dark:bg-[#2a3347] dark:hover:bg-[#2a3347] dark:text-white justify-center hover:bg-gray-200 rounded-full transition"
                       >
                         <Minus size={16} />
                       </button>
 
-                      <span className="px-4 font-semibold">
+                      <span className="px-4 dark:text-white font-semibold">
                         {item.quantity}
                       </span>
 
                       <button
                         onClick={() => increaseQty(item.id)}
-                        className="w-9 h-9 flex items-center justify-center hover:bg-gray-200 rounded-full transition"
+                        className="w-9 h-9 flex items-center cursor-pointer justify-center dark:bg-[#2a3347] dark:hover:bg-[#2a3347] dark:text-white hover:bg-gray-200 rounded-full transition"
                       >
                         <Plus size={16} />
                       </button>
@@ -157,7 +158,7 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
                     <button
                       onClick={() => removeItem(item.id)}
-                      className="w-10 h-10 flex items-center justify-center rounded-full bg-red-50 text-red-500 hover:bg-red-100 transition"
+                      className="w-10 h-10 flex items-center dark:bg-[#472727] cursor-pointer justify-center  rounded-full bg-red-50 text-red-500 hover:bg-red-100 transition"
                     >
                       <Trash2 size={18} />
                     </button>
@@ -178,39 +179,39 @@ return ( <section className="min-fit-screen bg-gray-50 pb-28 lg:pb-10">
 
         <div className="hidden lg:block">
 
-          <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 sticky top-24">
+          <div className="bg-white rounded-3xl dark:bg-[#161b27]  dark:border-[#1e2535] dark:shadow-gray-800 border border-gray-100 shadow-lg p-6 sticky top-24">
 
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl font-bold dark:text-white text-gray-800 mb-6">
               Order Summary
             </h2>
 
             <div className="space-y-4">
 
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between dark:text-white text-gray-600">
                 <span>Items</span>
                 <span>{totalItems}</span>
               </div>
 
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between dark:text-white text-gray-600">
                 <span>Subtotal</span>
                 <span>₹{ convertToINR( total.toFixed(2))}</span>
               </div>
 
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between dark:text-white text-gray-600">
                 <span>Shipping</span>
                 <span className="text-green-600">
                   Free
                 </span>
               </div>
 
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between dark:text-white text-gray-600">
                 <span>Tax</span>
                 <span>₹0</span>
               </div>
 
               <hr />
 
-              <div className="flex justify-between text-2xl font-bold">
+              <div className="flex justify-between text-2xl dark:text-white font-bold">
 
                 <span>Total</span>
 

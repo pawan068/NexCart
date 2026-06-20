@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { DataContext } from './../Context/Datacontext'
+import { useNavigate } from "react-router-dom";
+import { getTheme } from "../Context/ThemeContext";
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -9,6 +11,8 @@ const Slider = SliderImport.default || SliderImport
 
 const Carousel = () => {
   const { data, fetchProducts } = useContext(DataContext)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchProducts()
@@ -34,7 +38,7 @@ var settings = {
       <Slider {...settings}>
         {data?.slice(0, 7)?.map((item, index) => (
           <div key={index}>
-            <div className="bg-gradient-to-br from-emerald-950 via-emerald-800 to-emerald-600 min-h-[550px] md:min-h-[650px]">
+            <div className="bg-gradient-to-br from-emerald-950 via-emerald-800 to-emerald-600 dark:bg-gradient-to-r dark:from-black dark:via-gray-500 dark:via-gray-800 to-gray-400 min-h-[550px] md:min-h-[650px]">
 
               <div className="max-w-7xl mx-auto px-6 py-12 md:py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
 
@@ -55,11 +59,16 @@ var settings = {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
-                    <button className="bg-white text-emerald-700 font-semibold px-8 py-3 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <button onClick={() =>{ navigate("/products")
+                      window.scrollTo(0,0)}
+                    } className="bg-white dark:bg-gray-500 dark:text-white  text-emerald-700 font-semibold px-8 py-3 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
                       Shop Now
                     </button>
 
-                    <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-3 rounded-xl hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                    <button onClick={()=>{ navigate("/support")
+                      window.scrollTo(0,0)
+                    }
+                    } className="bg-white/10 backdrop-blur-md border border-white/20 dark:text-gray-400 text-white font-semibold px-8 py-3 rounded-xl hover:bg-white/20 transition-all duration-300 cursor-pointer">
                       Explore More
                     </button>
 
@@ -75,7 +84,7 @@ var settings = {
                   <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8">
 
                     <div className="absolute top-4 right-4 bg-emerald-500 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full">
-                      ₹{Math.round(item.price * 85)}
+                      ₹{Math.round(item.price * 90)}
                     </div>
 
                     <img

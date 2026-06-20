@@ -3,17 +3,16 @@ import Carousel from './../components/Carousel';
 import Category from './../components/Category';
 import MidBanner from './../components/MidBanner';
 import Features from './../components/Features';
-
+import { getTheme } from "../Context/ThemeContext";
 
 const Home = () => {
   return (
-    <>
-    
+    < >
     <Carousel/>
     <Category />
     <MidBanner />
     <Features />
-    
+  
     
     </>
   )

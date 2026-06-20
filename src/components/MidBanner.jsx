@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { useNavigate } from "react-router-dom";
+import { getTheme } from "../Context/ThemeContext";
 const MidBanner = () => {
+
+  const navigate = useNavigate()
+
   return (
-    <div className="bg-white py-5 md:py-20 px-4 md:px-6">
+    <div className="bg-white dark:bg-black py-5 md:py-20 px-4 md:px-6">
       <div
         className="relative max-w-7xl mx-auto min-h-[500px] md:h-[650px] rounded-3xl overflow-hidden bg-cover bg-center"
         style={{
@@ -27,11 +31,15 @@ const MidBanner = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300">
+              <button  onClick={() => {navigate("/products")
+                window.scrollTo(0,0)}
+              } className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300">
                 Shop Now
               </button>
 
-              <button className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300">
+              <button onClick={()=> {navigate("/about")
+                window.scrollTo(0,0)}
+              } className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300">
                 Explore Deals
               </button>
             </div>

@@ -3,6 +3,7 @@ import { IoCartOutline } from 'react-icons/io5'
 import { convertToINR } from "../utils/currency";
 import { useNavigate } from "react-router-dom";
 import { getCart } from "../Context/CartContext";
+import { getTheme } from "../Context/ThemeContext";
 
 const ProductCart = ({ product }) => {
 
@@ -12,9 +13,9 @@ const ProductCart = ({ product }) => {
   const { addToCart } = getCart();
 
   return (
-    <div className="bg-white border border-gray-200 max-h-[450px] md:max-h-[350px] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+    <div className="bg-white border dark:bg-[#161b27] dark:text-white border-gray-200 max-h-[450px] md:max-h-[350px] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
 
-      <div onClick={() => navigate(`/product/${product.id}`)} className="bg-gray-50 p-4 flex items-center justify-center h-[200px] sm:h-40">
+      <div onClick={() => navigate(`/product/${product.id}`)} className="bg-gray-50 dark:bg-[#1e232e] p-4 flex items-center justify-center h-[200px] sm:h-40">
         <img
           src={product.image}
           alt={product.title}
@@ -27,7 +28,7 @@ const ProductCart = ({ product }) => {
 
       <div className="p-4">
 
-        <h2 className="text-gray-800 overflow-scroll font-semibold text-sm sm:text-base line-clamp-2 min-h-[48px]">
+        <h2 className="text-gray-800 overflow-scroll dark:text-white font-semibold text-sm sm:text-base line-clamp-2 min-h-[48px]">
           {product.title}
         </h2>
 

@@ -1,9 +1,12 @@
+
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 *{
     scrollbar-width: none
 }
-@import "tailwindcss";
-
 @tailwind utilities;
+
+
 
 /* Slick Slider Fix */
 .slick-track {
