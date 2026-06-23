@@ -245,13 +245,13 @@ return ( <section className="min-fit-screen dark:bg-[#161b27] bg-gray-50 pb-28 l
 
   {cartItems.length > 0 && (
 
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-5px_30px_rgba(0,0,0,0.08)] px-4 py-3 z-50">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 dark:bg-black bg-white border-t border-gray-200 shadow-[0_-5px_30px_rgba(0,0,0,0.08)] px-4 py-3 z-50">
 
       <div className="flex items-center justify-between">
 
         <div>
 
-          <p className="text-xs text-gray-500">
+          <p className="text-xs dark:text-white text-gray-500">
             Total Amount
           </p>
 

@@ -14,7 +14,7 @@ import Support from './pages/Support';
 
 
 const App = () => {
-  const [location, setLocation] =useState()
+  const [location , setLocation] = useState()
 
 
   const getLocation = async()=>{

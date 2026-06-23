@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react' // 👈 Yahan useEffect add kiya
+import React, { useEffect } from 'react' 
 import { DataContext, getData } from './../Context/Datacontext';
 import { getTheme } from "../Context/ThemeContext";
 

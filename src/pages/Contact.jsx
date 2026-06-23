@@ -269,7 +269,7 @@ const Contact = () => {
           orders, payments, deliveries, and product-related queries.
         </p>
 
-        <Link to="/support" className="mt-6 bg-white text-emerald-600 px-8 py-3 w-fit  rounded-xl font-semibold hover:shadow-lg transition-all duration-300 cursor-pointer">
+        <Link to="/support" onClick={()=> window.scrollTo(0,0)} className="mt-6 bg-white text-emerald-600 px-8 py-3 w-fit  rounded-xl font-semibold hover:shadow-lg transition-all duration-300 cursor-pointer">
           Chat With Support
         </Link>
 

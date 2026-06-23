@@ -49,12 +49,12 @@ const Navbar = ({ location }) => {
 
             <div className='bg-white  h-16 shadow-md  sticky top-0 z-50'>
 
-                <div className='max-w-5xl md:max-w-7xl h-full flex   dark:bg-black dark:text-white dark:border-white  mx-auto px-5 grid grid-cols-2 md:grid-cols-3 items-center'>
+                <div className='max-w-5xl md:max-w-7xl h-full flex   dark:bg-black dark:text-white dark:border-white  mx-auto px-2 md:px-5 grid grid-cols-2 md:grid-cols-3 items-center'>
 
 
                     {/* LOGO Of SITE */}
 
-                    <div className='flex  max-w-fit items-center gap-2 md:gap-6'>
+                    <div className='flex  max-w-fit items-center gap-1 md:gap-6'>
 
                         <Link to={'/'}>
 
@@ -70,7 +70,7 @@ const Navbar = ({ location }) => {
                         {/* Location is started */}
 
 
-                        <div className=' flex items-center relative gap-1 dark:text-white text-gray-700 text-[10px] md:text-sm cursor-pointer font-medium'>
+                        <div className=' flex items-center relative gap-1 dark:text-white text-gray-700 text-[9px] md:text-md cursor-pointer'>
 
                             <MapPin className='text-green-400 w-4 h-4' />
 
