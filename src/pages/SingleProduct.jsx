@@ -196,7 +196,7 @@ const SingleProduct = () => {
               addToCart(product)
                 setAdded(true)
               window.scrollTo(0,0)}
-              } className="flex items-center justify-center gap-2 bg-emerald-60 cursor-pointer0 border hover:bg-emerald-700 text-white py-4 rounded-xl font-semibold transition-all">
+              } className="flex items-center justify-center gap-2 bg-emerald-600 cursor-pointer border hover:bg-emerald-700 text-white py-4 rounded-xl font-semibold transition-all">
 
                 <ShoppingCart size={20} />
                 {added?"Added To Cart":"Add To Cart"}
