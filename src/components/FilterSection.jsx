@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { SlidersHorizontal, Star } from 'lucide-react'
 import { getData } from './../Context/Datacontext';
-import { convertToINR } from "../utils/currency";
+import { convertToINR } from "../utils/Currency";
 import { SliderImport } from 'react-slick';
 
 
