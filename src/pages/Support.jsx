@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { Search, ChevronDown, ChevronUp, LifeBuoy } from "lucide-react";
+import { getTheme } from "../Context/ThemeContext";
 
 const Support = () => {
   const [search, setSearch] = useState("");
@@ -64,7 +65,7 @@ answer:
   );
 
   return (
-    <section className="min-h-screen bg-gray-50 py-10 px-4">
+    <section className="min-h-screen dark:bg-gray-800 bg-gray-50 py-10 px-4">
       <div className="max-w-4xl mx-auto">
         
         {/* Header */}
@@ -73,7 +74,7 @@ answer:
             <LifeBuoy size={50} className="text-emerald-600" />
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <h1 className="text-3xl dark:text-white md:text-4xl font-bold text-gray-800">
             NexCart Support Center
           </h1>
 
@@ -83,10 +84,10 @@ answer:
         </div>
 
         {/* Search */}
-        <div className="relative mb-8">
+        <div className="relative  mb-8">
           <Search
             size={20}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            className="absolute left-4 top-1/2 -translate-y-1/2  text-gray-400"
           />
 
           <input
@@ -94,7 +95,7 @@ answer:
             placeholder="Search help articles..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:border-emerald-500"
+            className="w-full bg-white border border-gray-300 dark:bg-gray-600 dark:text-gray-200 rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:border-emerald-500"
           />
         </div>
 
@@ -104,7 +105,7 @@ answer:
             filteredFaqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden"
+                className="bg-white rounded-2xl shadow-sm border dark:bg-gray-900 dark:text-gray-200 border-gray-200 overflow-hidden"
               >
                 <button
                   onClick={() =>
@@ -112,7 +113,7 @@ answer:
                   }
                   className="w-full flex items-center justify-between p-5 text-left cursor-pointer"
                 >
-                  <span className="font-semibold text-gray-800">
+                  <span className="font-semibold dark:text-white text-gray-800">
                     {faq.question}
                   </span>
 
@@ -124,7 +125,7 @@ answer:
                 </button>
 
                 {openIndex === index && (
-                  <div className="px-5 pb-5 text-gray-600">
+                  <div className="px-5 pb-5 dark:text-gray-400 text-gray-600">
                     {faq.answer}
                   </div>
                 )}
