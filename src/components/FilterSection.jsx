@@ -33,7 +33,7 @@ const FilterSection = ({
     <div className=" hidden sm:block bg-white rounded-2xl sticky min-[500px]:w-[400px] border dark:bg-[#161b27] border-gray-200 shadow-sm p-5 lg:sticky lg:top-24">
 
       {/* Header */}
-      <div className="flex items-center gap-2 pb-4 border-b border-gray-100">
+      <div className="flex items-center gap-2 pb-4 ">
         <SlidersHorizontal size={20} className="text-emerald-600" />
         <h2 className="text-lg font-semibold dark:text-white text-gray-800">
           Filters
@@ -42,7 +42,7 @@ const FilterSection = ({
       {/* 
       search */}
 
-      <input type="text" placeholder='Search..' onChange={(e) => setSearch(e.target.value)} value={search} className='bg-white p-2 w-full rounded-md border focus:outline-none   border-gray-400' />
+      <input type="text" placeholder='Search..' onChange={(e) => setSearch(e.target.value)} value={search} className='bg-white p-2 w-full rounded-md border  focus:outline-none   border-gray-400' />
 
 
       {/* Categories */}
