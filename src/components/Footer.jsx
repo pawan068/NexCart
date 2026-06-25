@@ -77,12 +77,12 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-1 md:px-4 py-2 bg-gray-800 text-white rounded-l-lg border border-gray-700 border border-green-500 focus:outline-none focus:border-emerald-500"
+                className="flex-1 px-1 md:px-1 md:max-w-[200px] py-2 bg-gray-800 text-white rounded-l-lg border border-gray-700 border  focus:outline-none border-emerald-500"
               />
 
               <button
                 type="submit"
-                className="bg-emerald-600 hover:bg-emerald-700 px-5 rounded-r-lg text-white font-medium transition"
+                className="bg-emerald-600 hover:bg-emerald-700 px-5 rounded-r-lg text-white font-medium transition "
               >
                 Join
               </button>
