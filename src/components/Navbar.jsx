@@ -87,7 +87,7 @@ const Navbar = ({ location }) => {
                             {
                                 opendrop ? <div className='rounded-xl absolute z-50 top-12 w-[180px] border border-gray-100   bg-white shadow-lg'>
                                     <div className='px-4 py-3 flex items-center justify-between'>
-                                        <h1 className='font-semibold bg-gray-950 text-gray-100text-gray-800'>Location</h1>
+                                        <h1 className='font-semibold  dark:text-gray-100 text-gray-800'>Location</h1>
                                         <span onClick={toggledrop} className='text-gray-400 hover:text-red-400 cursor-pointer text-xl transition-all'><CgClose /></span>
                                     </div>
                                     <div className='px-4 pb-4'>

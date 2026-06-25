@@ -11,6 +11,7 @@ import axios from './../node_modules/axios/lib/axios';
 import Footer from './components/Footer';
 import SingleProduct from './pages/SingleProduct';
 import Support from './pages/Support';
+import BackToTop from './components/BackToTop';
 
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
       <Route path='/cart' element={<Cart />} ></Route>
      </Routes>
      <Footer />
+     <BackToTop />
    </BrowserRouter>
   )
 }
