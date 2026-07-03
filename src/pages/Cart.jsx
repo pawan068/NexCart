@@ -1,6 +1,6 @@
 import React from "react";
 import { getCart } from "../Context/CartContext";
-import { convertToINR } from "../utils/currency";
+import { convertToINR } from "../utils/Currency";
 import { getTheme } from "../Context/ThemeContext";
 import {
 Plus,

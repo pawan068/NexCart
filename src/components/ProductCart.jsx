@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { IoCartOutline } from 'react-icons/io5'
-import { convertToINR } from "../utils/currency";
+import { convertToINR } from "../utils/Currency";
 import { useNavigate } from "react-router-dom";
 import { getCart } from "../Context/CartContext";
 import { getTheme } from "../Context/ThemeContext";
