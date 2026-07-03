@@ -45,8 +45,14 @@ const App = () => {
   getLocation()
  },[])
 
+
+ const basename =
+  window.location.hostname.includes("github.io")
+    ? "/NexCart"
+    : "";
+
   return (
-   <BrowserRouter basename='/NexCart'>
+   <BrowserRouter basename={basename}>
    <Navbar location={location} />
      <Routes>
       <Route path='/' element={<Home />} ></Route>
